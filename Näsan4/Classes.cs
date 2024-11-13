@@ -2,19 +2,19 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 public class Hardware{
-    protected string _name;
-    protected int _price;
+    protected string name;
+    protected int price;
     public Hardware(){
-        _price=0;
-        _name="";
+        price=0;
+        name="";
 
     }
     int GetPrice(){
-        return _price;
+        return price;
     }
 
     string GetName(){
-        return _name;
+        return name;
     }
 }
 
@@ -22,12 +22,14 @@ public class HardDrive:Hardware{
 
     protected string memory;
     public HardDrive(){
-        _name="Harddrive";
-        _price=100;
-        void SetMemory(int mem){
-            memory=mem+"GB";
-        }
+        name="Harddrive";
+        price=100;
     }
+    //-------------------------------------------SetHardDrive----------------------------------------------------------
+    void SetMemory(int _memory){
+        memory=_memory+"GB";
+    }
+    //-------------------------------------------GetHardDrive----------------------------------------------------------
     string GetMemory(){
         return memory;
     }
@@ -35,15 +37,47 @@ public class HardDrive:Hardware{
 
 public class Processor:Hardware{
     protected int cores;
+    protected int clockSpeed;
     public Processor(){
-        _name="Processor";
-        _price=200;
-
-        void SetCores(int amountOfCores){
-            cores=amountOfCores;
-        }
+        name="Processor";
+        price=200;
     }
+    //-------------------------------------------SetProcessor----------------------------------------------------------
+    void SetCores(int _cores){
+        cores=_cores;
+    }
+    void SetClockSpeed(int _clockSpeed){
+        clockSpeed=_clockSpeed;
+    }
+    //-------------------------------------------GetProcessor----------------------------------------------------------
     int GetCores(){
         return cores;
+    }
+    int GetClockSpeed(){
+        return clockSpeed;
+    }
+}
+
+public class GraphicCard:Hardware{
+    protected int resolution;
+    protected int memory;
+
+    public GraphicCard(){
+        name="Graphic Card";
+        price=300;
+    }
+    //-------------------------------------------SetGraphicCard--------------------------------------------------------
+    void SetMemory(int _memory){
+        memory=_memory;
+    }
+    void SetResolution(int _resolution){
+        resolution=_resolution;
+    }
+    //-------------------------------------------GetGraphicCard--------------------------------------------------------
+    int GetMemory(){
+        return memory;
+    }
+    int GetResolution(){
+        return resolution;
     }
 }
