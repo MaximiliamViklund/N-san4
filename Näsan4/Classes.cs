@@ -21,9 +21,9 @@ public class Hardware{
 public class HardDrive:Hardware{
 
     protected string memory;
-    public HardDrive(){
-        name="Harddrive";
-        price=100;
+    public HardDrive(string _name, int _price){
+        name=_name;
+        price=_price;
     }
     //-------------------------------------------SetHardDrive----------------------------------------------------------
     void SetMemory(int _memory){
@@ -38,9 +38,9 @@ public class HardDrive:Hardware{
 public class Processor:Hardware{
     protected int cores;
     protected int clockSpeed;
-    public Processor(){
-        name="Processor";
-        price=200;
+    public Processor(string _name, int _price){
+        name=_name;
+        price=_price;
     }
     //-------------------------------------------SetProcessor----------------------------------------------------------
     void SetCores(int _cores){
@@ -62,9 +62,9 @@ public class GraphicCard:Hardware{
     protected int resolution;
     protected int memory;
 
-    public GraphicCard(){
-        name="Graphic Card";
-        price=300;
+    public GraphicCard(string _name, int _price){
+        name=_name;
+        price=_price;
     }
     //-------------------------------------------SetGraphicCard--------------------------------------------------------
     void SetMemory(int _memory){
