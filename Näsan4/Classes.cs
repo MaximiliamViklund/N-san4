@@ -20,18 +20,25 @@ public class Hardware{
 
 public class HardDrive:Hardware{
 
-    protected string memory;
+    protected int memory;
     public HardDrive(string _name, int _price){
         name=_name;
         price=_price;
     }
     //-------------------------------------------SetHardDrive----------------------------------------------------------
-    void SetMemory(int _memory){
-        memory=_memory+"GB";
+    public void SetMemory(int _memory){
+        memory=_memory;
     }
     //-------------------------------------------GetHardDrive----------------------------------------------------------
-    string GetMemory(){
+    int GetMemory(){
         return memory;
+    }
+    //----------------------------------------------Display------------------------------------------------------------
+    public void Display(){
+        Console.WriteLine(name);
+        Console.WriteLine("Price: "+price+"kr");
+        Console.WriteLine("Memory: "+memory+"GB");
+        Console.ReadLine();
     }
 }
 
@@ -43,10 +50,10 @@ public class Processor:Hardware{
         price=_price;
     }
     //-------------------------------------------SetProcessor----------------------------------------------------------
-    void SetCores(int _cores){
+    public void SetCores(int _cores){
         cores=_cores;
     }
-    void SetClockSpeed(int _clockSpeed){
+    public void SetClockSpeed(int _clockSpeed){
         clockSpeed=_clockSpeed;
     }
     //-------------------------------------------GetProcessor----------------------------------------------------------
@@ -55,6 +62,14 @@ public class Processor:Hardware{
     }
     int GetClockSpeed(){
         return clockSpeed;
+    }
+    //----------------------------------------------Display------------------------------------------------------------
+    public void Display(){
+        Console.WriteLine(name);
+        Console.WriteLine("Price: "+price+"kr");
+        Console.WriteLine("Number of cores: "+cores);
+        Console.WriteLine("Clock Speed: "+clockSpeed);
+        Console.ReadLine();
     }
 }
 
@@ -67,10 +82,10 @@ public class GraphicCard:Hardware{
         price=_price;
     }
     //-------------------------------------------SetGraphicCard--------------------------------------------------------
-    void SetMemory(int _memory){
+    public void SetMemory(int _memory){
         memory=_memory;
     }
-    void SetResolution(int _resolution){
+    public void SetResolution(int _resolution){
         resolution=_resolution;
     }
     //-------------------------------------------GetGraphicCard--------------------------------------------------------
@@ -79,5 +94,13 @@ public class GraphicCard:Hardware{
     }
     int GetResolution(){
         return resolution;
+    }
+    //----------------------------------------------Display------------------------------------------------------------
+    public void Display(){
+        Console.WriteLine(name);
+        Console.WriteLine("Price: "+price+"kr");
+        Console.WriteLine("Memory: "+memory+"GB");
+        Console.WriteLine("Resolution: "+resolution+"p");
+        Console.ReadLine();
     }
 }
